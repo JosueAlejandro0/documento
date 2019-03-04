@@ -1,1 +1,1 @@
-## Documento explicando el uso algunos servicios y funciones
+## Documento explicando el uso de algunos servicios y funciones
