@@ -1,0 +1,34 @@
+
+INGRESAR LOS SIGUIENTES COMANDOS EN LA TERMINAL-> Los comandos a continuacion
+abriran el acceso HTTP y SSH en el firewall del sistema.
+
+sudo yum install -y curl policycoreutils-python openssh-server
+sudo systemctl enable sshd
+sudo systemctl start sshd
+sudo firewall-cmd --permanent --add-service=http
+sudo systemctl reload firewalld
+
+INSTALAR POSTFIX PARA ENVIAN NOTIFICACIONES POR EMAIL
+sudo yum install postfix
+sudo systemctl enable postfix
+sudo systemctl start postfix
+
+DESCARGAR E INSTALAR PAQUETE DE GITLAB
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+	"http://gitlab.example.com"-> SE PUEDE CAMBIAR EL NOMBRE DE LA URL
+
+sudo EXTERNAL_URL="http://gitlab.example.com" yum install -y gitlab-ee
+
+PARA ENTRAR A LA PAGINA DE GITLAB SE DEBE DE ACCEDER POR "localhost:8080" o "127.0.0.1:8080"
+SI SE DESEA CAMBIAR A EL NOMBRE DE LA PAGINA ENTRAR EN LA CARPETA ETC Y MODIFICAR EL ARCHIVO
+"hosts" a -> "127.0.0.1   http://gitlab.tecmint.com"
+
+A CONTINUACION SE PROCEDE A ESCRIBIR LA CONTRASEÑA EN LA PAGINA QUE APARECE AL ESCRIBIR EN
+EL BUSCADOR  "http://gitlab.tecmint.com:8080" O "localhost:8080" 
+
+EN LA PAGINA A LA QUE SE ACCEDE SE PROCEDERA A INGRESAR EL USUARIO Y LA CONTRASEÑA
+USUARIO->"root"
+CONTRASEÑA->LA QUE SE REGISTRO PREVIAMENTE
+
+
+
